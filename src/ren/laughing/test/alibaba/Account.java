@@ -20,6 +20,7 @@ public class Account {
 	 */
 	public void transferIn(double price){
 		this.chargeBalance = chargeBalance + price;
+		System.out.println("该账户转入了"+price+"！剩余金额为"+chargeBalance);
 	}
 	/**
 	 * 转出金额
@@ -31,6 +32,7 @@ public class Account {
 			throw new Exception("剩余金额不足，不能转出！");
 		}else{
 			this.chargeBalance = chargeBalance - price;
+			System.out.println("该账户转出了"+price+"!剩余金额为"+chargeBalance);
 		}
 	}
 }
