@@ -2,6 +2,12 @@ package ren.laughing.test.souhu;
 
 import java.util.Scanner;
 
+/**
+ * 猴子过河，每个位置下有弹簧，经弹簧过跳跃不同的距离
+ * 
+ * @author Laughing_Lz
+ * @time 2016年9月24日
+ */
 public class Bounce {
 	public static int getCount(int n, int[] arr) {
 		int sum = 0;
