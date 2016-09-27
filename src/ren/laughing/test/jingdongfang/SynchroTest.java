@@ -2,7 +2,11 @@ package ren.laughing.test.jingdongfang;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * 用wait-notify实现的生产者消费者模型
+ * @author Laughing_Lz
+ * @time 2016年9月24日
+ */
 class Plate {
 	private List<Object> apples = new ArrayList<Object>();
 
@@ -16,7 +20,7 @@ class Plate {
 //				}
 //			}
 			apples.add(apple);
-			notify();
+			notify();//唤醒另一线程
 			System.out.println("放入了一个苹果:" + apple);
 		} else {
 			System.out.println("超出篮子承载数目：5！");
@@ -26,7 +30,7 @@ class Plate {
 	public synchronized void getApple() {
 		if (apples.size() == 0) {
 			try {
-				wait();
+				wait();//等待生产线程
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
