@@ -20,8 +20,8 @@ class Plate {
 //				}
 //			}
 			apples.add(apple);
-			notify();//唤醒另一线程
 			System.out.println("放入了一个苹果:" + apple);
+			notify();//唤醒另一线程
 		} else {
 			System.out.println("超出篮子承载数目：5！");
 		}

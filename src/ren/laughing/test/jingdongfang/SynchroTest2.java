@@ -48,7 +48,6 @@ class Consumer implements Runnable {
 			try {
 				System.out.println("Consumer:" + sharedQueue.take());
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -58,7 +57,7 @@ class Consumer implements Runnable {
 
 public class SynchroTest2 {
 	public static void main(String args[]) {
-		List<Object> linkedlist = Collections.synchronizedList(new LinkedList<Object>());//创建一个线程安全的linkedlist
+		List<Object> linkedlist = Collections.synchronizedList(new LinkedList<Object>());// 创建一个线程安全的linkedlist
 		BlockingQueue<Object> sharedQueue = new LinkedBlockingQueue<Object>();
 		new Thread(new Producer(sharedQueue)).start();
 		new Thread(new Consumer(sharedQueue)).start();
