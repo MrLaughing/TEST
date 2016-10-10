@@ -30,6 +30,7 @@ class Plate {
 	public synchronized void getApple() {
 		if (apples.size() == 0) {
 			try {
+				System.out.println("篮子空了！该线程等待放入苹果后再拿出···");
 				wait();//等待生产线程
 			} catch (InterruptedException e) {
 				e.printStackTrace();
@@ -38,8 +39,8 @@ class Plate {
 		Object apple = apples.get(0);
 		// apples.clear();
 		apples.remove(0);
-		notify();
 		System.out.println("拿到一个苹果:" + apple);
+		notify();
 	}
 }
 
@@ -77,7 +78,7 @@ class Get implements Runnable {
 public class SynchroTest {
 	public static void main(String args[]) {
 		Plate myPlate = new Plate();
-		new Thread(new Get(myPlate)).start();
 		new Thread(new Add(myPlate)).start();
+		new Thread(new Get(myPlate)).start();
 	}
 }
