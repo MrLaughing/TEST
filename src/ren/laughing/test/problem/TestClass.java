@@ -1,4 +1,4 @@
-package ren.laughing.test.abc;
+package ren.laughing.test.problem;
 
 public class TestClass {
 	private static void testMethod() {

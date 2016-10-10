@@ -1,4 +1,4 @@
-package ren.laughing.test.abc;
+package ren.laughing.test.problem;
 
 public class OuterClass {
 	public InnerClass getInnerClass(final int num, String str2) {
